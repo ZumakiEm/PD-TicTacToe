@@ -1,0 +1,74 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: c9680b7ca8bcd75901a5ca6acf6c9f6a1f835c61509b1842fb84afcb3e459aa4
+
+name:           tateti
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/tateti#readme>
+homepage:       https://github.com/githubuser/tateti#readme
+bug-reports:    https://github.com/githubuser/tateti/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/tateti
+
+library
+  exposed-modules:
+      Game
+      Logic
+      Main
+      Rendering
+  other-modules:
+      Paths_tateti
+  hs-source-dirs:
+      src
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , gloss
+  default-language: Haskell2010
+
+executable tateti-exe
+  main-is: Main.hs
+  other-modules:
+      Game
+      Logic
+      Rendering
+      Paths_tateti
+  hs-source-dirs:
+      src
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , gloss
+    , tateti
+  default-language: Haskell2010
+
+test-suite tateti-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_tateti
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , gloss
+    , tateti
+  default-language: Haskell2010
